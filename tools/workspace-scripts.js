@@ -55,12 +55,19 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@mleleux/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @mleleux/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
+    '@mleleux': {
+      // @mleleux/nativescript-revenuecat
+      'nativescript-revenuecat': {
+        build: {
+          script: 'nx run nativescript-revenuecat:build.all',
+          description: '@mleleux/nativescript-revenuecat: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,6 +78,10 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'nativescript-revenuecat': {
+        script: 'nx run nativescript-revenuecat:focus',
+        description: 'Focus on @mleleux/nativescript-revenuecat',
+      },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',
         description: 'Reset Focus',

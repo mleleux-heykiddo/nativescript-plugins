@@ -1,0 +1,26 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="nativescript-revenuecat" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ScrollView class="h-full">
+          <StackLayout>
+            <Button text="Get Products" tap="{{ getProducts }}" class="btn btn-primary"/>
+            <Button text="Get Offerings" tap="{{ getOfferings }}" class="btn btn-primary"/>
+            <Button text="Get Entitlements" tap="{{ getEntitlements }}" class="btn btn-primary"/>
+            <Button text="Login" tap="{{ login }}" class="btn btn-primary"/>
+            <Button text="Logout" tap="{{ login }}" class="btn btn-primary"/>
+            <Button text="Purchase" tap="{{ purchase }}" class="btn btn-primary"/>
+            <Button text="Restore Purchases" tap="{{ restorePurchases }}" class="btn btn-primary"/>
+            <Button text="Get User ID" tap="{{ getUserId }}" class="btn btn-primary"/>
+            <Button text="Get Customer Info" tap="{{ getCustomerInfo }}" class="btn btn-primary"/>
+            <Button text="Set Attributes" tap="{{ setAttributes }}" class="btn btn-primary"/>
+            <Button text="Set Email" tap="{{ setEmail }}" class="btn btn-primary"/>
+            <Button text="Set Phone" tap="{{ setPhone }}" class="btn btn-primary"/>
+            <Button text="Set DisplayName" tap="{{ setDisplayName }}" class="btn btn-primary"/>
+            <Button text="Set Firebase ID" tap="{{ setFirebaseID }}" class="btn btn-primary"/>
+          </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>

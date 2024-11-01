@@ -1,0 +1,8 @@
+android {
+
+}
+
+
+dependencies {
+    implementation 'com.revenuecat.purchases:purchases:8.8.1'
+}
