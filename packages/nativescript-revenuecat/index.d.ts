@@ -4,6 +4,12 @@ import { Offering } from './Offering';
 import { Product } from './Product';
 import { ProductCategory } from './Product/common';
 
+export { LogInResult, PurchaseResult, PurchasesStoreTransaction } from './common';
+export * from './Customer';
+export * from './Entitlement';
+export * from './Offering';
+export * from './Product';
+
 export declare class RevenueCat extends RevenueCatCommon {
   /**
    * Sets up Purchases with your API key and an app user id.
