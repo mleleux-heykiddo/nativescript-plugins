@@ -1,4 +1,4 @@
-import { LogInResult, PurchaseResult, RevenuecatCommon } from './common';
+import { LogInResult, PurchaseResult, RevenueCatCommon } from './common';
 import { Entitlement } from './Entitlement';
 import { Offering } from './Offering';
 import { Product } from './Product';
