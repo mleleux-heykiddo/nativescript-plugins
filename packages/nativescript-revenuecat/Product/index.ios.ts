@@ -1,4 +1,4 @@
-import { BaseProduct, ProductCategory } from './common';
+import { BaseProduct, BillingPeriod, ProductCategory } from './common';
 
 export class Product extends BaseProduct {
   public nativeValue: RCStoreProduct;
@@ -12,10 +12,25 @@ export class Product extends BaseProduct {
     this.priceAmount = nativeValue.price.doubleValue;
     this.priceFormatted = nativeValue.localizedPriceString;
     this.priceCurrencyCode = nativeValue.currencyCode;
-    this.billingPeriod = nativeValue.subscriptionPeriod.unit.toString();
+    this.billingPeriod = this.mapBillingPeriod(nativeValue.subscriptionPeriod.unit);
     this.isFamilyShareable = nativeValue.isFamilyShareable;
     this.productCategory = this.mapProductCategory(nativeValue.productCategory);
     this.skProduct = nativeValue.sk1Product;
+  }
+
+  private mapBillingPeriod(unit: RCSubscriptionPeriodUnit): BillingPeriod {
+    switch (unit) {
+      case RCSubscriptionPeriodUnit.Day:
+        return BillingPeriod.DAY;
+      case RCSubscriptionPeriodUnit.Week:
+        return BillingPeriod.WEEK;
+      case RCSubscriptionPeriodUnit.Month:
+        return BillingPeriod.MONTH;
+      case RCSubscriptionPeriodUnit.Year:
+        return BillingPeriod.YEAR;
+      default:
+        throw new Error(`Unknown billing period unit: ${unit}`);
+    }
   }
 
   private mapProductCategory(nativeCategory: RCStoreProductCategory): ProductCategory {

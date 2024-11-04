@@ -2,13 +2,15 @@ import { Entitlement } from '../Entitlement/index.android';
 import { BaseCustomer } from './common';
 type CustomerInfo = com.revenuecat.purchases.CustomerInfo;
 
+const Purchases = com.revenuecat.purchases.Purchases;
 export class Customer extends BaseCustomer {
   public nativeValue: CustomerInfo;
 
   constructor(nativeValue: CustomerInfo) {
     super(nativeValue);
 
-    this.appUserId = nativeValue.getOriginalAppUserId();
+    this.appUserId = Purchases.getSharedInstance().getAppUserID();
+    this.originalAppUserId = nativeValue.getOriginalAppUserId();
     this.originalPurchaseDate = nativeValue.getOriginalPurchaseDate() ? new Date(nativeValue.getOriginalPurchaseDate().toString()) : null;
     this.expirationDate = nativeValue.getLatestExpirationDate() ? new Date(nativeValue.getLatestExpirationDate().toString()) : null;
     this.firstSeen = nativeValue.getFirstSeen() ? new Date(nativeValue.getFirstSeen().toString()) : null;

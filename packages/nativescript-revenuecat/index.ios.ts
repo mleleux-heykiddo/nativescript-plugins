@@ -39,7 +39,19 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async getOfferings(): Promise<Offering[]> {
+  static async getCurrentOffering(): Promise<Offering> {
+    return new Promise((resolve, reject) => {
+      RCPurchases.sharedPurchases.getOfferingsWithCompletion((offerings, error) => {
+        if (error) {
+          return reject(error);
+        }
+
+        resolve(new Offering(offerings.current));
+      });
+    });
+  }
+
+  static async getAllOfferings(): Promise<Offering[]> {
     return new Promise((resolve, reject) => {
       RCPurchases.sharedPurchases.getOfferingsWithCompletion((offerings, error) => {
         if (error) {

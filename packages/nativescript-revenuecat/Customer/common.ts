@@ -7,6 +7,7 @@ export abstract class BaseCustomer {
   public abstract readonly debug: string | null;
 
   public appUserId: string;
+  public originalAppUserId: string;
   public originalPurchaseDate: Date;
   public expirationDate: Date;
   public firstSeen: Date;
