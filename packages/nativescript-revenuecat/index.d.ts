@@ -38,11 +38,18 @@ export declare class RevenueCat extends RevenueCatCommon {
   public static async getProducts(productIdentifiers: string[], type: ProductCategory = ProductCategory.SUBSCRIPTION): Promise<Product[]>;
 
   /**
-   * Gets the map of entitlements -> offerings -> products
+   * Gets the map of current offering
+   * @returns {Promise<Offering>} Promise of offering structure. The promise will be rejected if configure
+   * has not been called yet.
+   */
+  public static async getCurrentOffering(): Promise<Offering>;
+
+  /**
+   * Gets the map of offerings -> products
    * @returns {Promise<Offering[]>} Promise of entitlements structure. The promise will be rejected if configure
    * has not been called yet.
    */
-  public static async getOfferings(): Promise<Offering[]>;
+  public static async getAllOfferings(): Promise<Offering[]>;
 
   /**
    * Gets the entitlements for the current user.

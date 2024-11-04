@@ -12,6 +12,13 @@ export enum ProductCategory {
   NON_SUBSCRIPTION = 1,
 }
 
+export enum BillingPeriod {
+  DAY = 0,
+  WEEK = 1,
+  MONTH = 2,
+  YEAR = 3,
+}
+
 export abstract class BaseProduct {
   public nativeValue: ProductDetails | RCStoreProduct;
   public abstract readonly debug: string | null;
@@ -22,7 +29,7 @@ export abstract class BaseProduct {
   public priceAmount: number;
   public priceFormatted: string;
   public priceCurrencyCode: string;
-  public billingPeriod: string;
+  public billingPeriod: BillingPeriod;
   /** Android only */
   public type: string;
   public offerToken: string;

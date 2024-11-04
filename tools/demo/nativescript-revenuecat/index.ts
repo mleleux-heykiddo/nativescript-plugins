@@ -9,7 +9,7 @@ export class DemoSharedNativescriptRevenuecat extends DemoSharedBase {
   }
 
   async getOfferings() {
-    RevenueCat.getOfferings()
+    RevenueCat.getCurrentOffering()
       .then((offerings) => {
         console.log(offerings);
       })

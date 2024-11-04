@@ -1,6 +1,6 @@
 {
   "name": "@mleleux/nativescript-revenuecat",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "description": "Add a plugin description",
   "main": "index",
   "types": "index.d.ts",

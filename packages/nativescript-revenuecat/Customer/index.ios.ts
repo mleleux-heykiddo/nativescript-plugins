@@ -7,11 +7,12 @@ export class Customer extends BaseCustomer {
   constructor(nativeValue: RCCustomerInfo) {
     super(nativeValue);
 
-    this.appUserId = nativeValue.originalAppUserId;
+    this.appUserId = RCPurchases.sharedPurchases.appUserID;
+    this.originalAppUserId = nativeValue.originalAppUserId;
     this.originalPurchaseDate = new Date(nativeValue.originalPurchaseDate);
     this.expirationDate = new Date(nativeValue.latestExpirationDate);
     this.firstSeen = new Date(nativeValue.firstSeen);
-    this.entitlements = Array.from(nativeValue.entitlements.active).map((entitlement) => new Entitlement(entitlement));
+    this.entitlements = Array.from(nativeValue.entitlements.active.allValues).map((entitlement) => new Entitlement(entitlement));
     this.allPurchasedProductIds = Array.from(nativeValue.allPurchasedProductIdentifiers);
   }
 
