@@ -1,6 +1,6 @@
 # @mleleux/nativescript-revenuecat
 
-[RevenueCat](https://www.revenuecat.com/docs/welcome/overview) SDk for NativeScript
+[RevenueCat](https://www.revenuecat.com/docs/welcome/overview) SDK for NativeScript
 
 A powerful and reliable in-app purchase server that makes it easy to build, analyze, and grow your subscriber base whether you're just starting out or already have millions of customers.
 
