@@ -26,6 +26,12 @@ Initialize the SDK with your api key and unique userId before purchasing or rest
 RevenueCat.configure('<api-key>', '<userId>');
 ```
 
+## Testing
+
+- Make sure to update the `nativescript.config.ts -> id` value so that it matches your setup in RevenueCat before testing this plugin.
+
+- If you are using the `getProducts` method to test, be sure to update the product id's within `tools -> demo -> nativescript-revenuecat -> index.ts`
+
 ## API
 
 - `RevenueCat.configure(apiKey: string, appUserId?: string)`: Initialize the SDK with your api key and optional appUserId

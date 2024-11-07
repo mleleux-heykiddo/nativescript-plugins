@@ -3,7 +3,7 @@ import { RevenueCat } from '@mleleux/nativescript-revenuecat';
 
 export class DemoSharedNativescriptRevenuecat extends DemoSharedBase {
   async getProducts() {
-    const products = await RevenueCat.getProducts(['com.heykiddo.talk.sub_annual_trial_1_week']);
+    const products = await RevenueCat.getProducts(['sub_annual_trial_1_week']); // replace with your own products here
     console.log(products);
     return products;
   }
