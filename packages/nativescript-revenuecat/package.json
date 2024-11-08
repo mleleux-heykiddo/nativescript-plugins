@@ -1,7 +1,7 @@
 {
   "name": "@mleleux/nativescript-revenuecat",
   "version": "1.0.0",
-  "description": "Add a plugin description",
+  "description": "NativeScript plugin for RevenueCat SDK",
   "main": "index",
   "types": "index.d.ts",
   "nativescript": {

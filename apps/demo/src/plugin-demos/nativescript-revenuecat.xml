@@ -13,6 +13,7 @@
             <Button text="Logout" tap="{{ login }}" class="btn btn-primary"/>
             <Button text="Purchase" tap="{{ purchase }}" class="btn btn-primary"/>
             <Button text="Restore Purchases" tap="{{ restorePurchases }}" class="btn btn-primary"/>
+            <Button text="Sync Purchases" tap="{{ syncPurchases }}" class="btn btn-primary"/>
             <Button text="Get User ID" tap="{{ getUserId }}" class="btn btn-primary"/>
             <Button text="Get Customer Info" tap="{{ getCustomerInfo }}" class="btn btn-primary"/>
             <Button text="Set Attributes" tap="{{ setAttributes }}" class="btn btn-primary"/>

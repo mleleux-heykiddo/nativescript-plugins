@@ -147,14 +147,6 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
-    RCPurchases.setDebugLogsEnabled(enabled);
-  }
-
-  static async setLogLevel(logLevel: number): Promise<void> {
-    RCPurchases.setLogLevel(logLevel);
-  }
-
   static async getCustomerInfo(): Promise<Customer> {
     return new Promise((resolve, reject) => {
       RCPurchases.sharedPurchases.getCustomerInfoWithCompletion((purchaserInfo, error) => {
@@ -164,6 +156,25 @@ export class RevenueCat extends RevenueCatCommon {
         resolve(new Customer(purchaserInfo));
       });
     });
+  }
+
+  static async syncPurchases(): Promise<Customer> {
+    return new Promise((resolve, reject) => {
+      RCPurchases.sharedPurchases.syncPurchasesWithCompletion((purchaserInfo, error) => {
+        if (error) {
+          return reject(error);
+        }
+        resolve(new Customer(purchaserInfo));
+      });
+    });
+  }
+
+  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
+    RCPurchases.setDebugLogsEnabled(enabled);
+  }
+
+  static async setLogLevel(logLevel: number): Promise<void> {
+    RCPurchases.setLogLevel(logLevel);
   }
 
   static async setAttributes(attributes: any): Promise<void> {
