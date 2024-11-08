@@ -139,10 +139,6 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async getAppUserID(): Promise<string> {
-    return Purchases.getSharedInstance().getAppUserID();
-  }
-
   static async logIn(appUserID: string): Promise<{ customerInfo: Customer; created: boolean }> {
     return new Promise((resolve, reject) => {
       Purchases.getSharedInstance().logIn(
@@ -177,14 +173,6 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
-    Purchases.setDebugLogsEnabled(enabled);
-  }
-
-  static async setLogLevel(logLevel: number): Promise<void> {
-    Purchases.setLogLevel(logLevel);
-  }
-
   static async getCustomerInfo(): Promise<Customer> {
     return new Promise((resolve, reject) => {
       Purchases.getSharedInstance().getCustomerInfo(
@@ -198,6 +186,33 @@ export class RevenueCat extends RevenueCatCommon {
         })
       );
     });
+  }
+
+  static async syncPurchases(): Promise<Customer> {
+    return new Promise((resolve, reject) => {
+      Purchases.getSharedInstance().syncPurchases(
+        new Interfaces.SyncPurchasesCallback({
+          onSuccess: (purchaserInfo) => {
+            resolve(new Customer(purchaserInfo));
+          },
+          onError: (error) => {
+            reject(error);
+          },
+        })
+      );
+    });
+  }
+
+  static async getAppUserID(): Promise<string> {
+    return Purchases.getSharedInstance().getAppUserID();
+  }
+
+  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
+    Purchases.setDebugLogsEnabled(enabled);
+  }
+
+  static async setLogLevel(logLevel: number): Promise<void> {
+    Purchases.setLogLevel(logLevel);
   }
 
   static async setAttributes(attributes: any): Promise<void> {

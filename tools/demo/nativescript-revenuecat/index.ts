@@ -74,6 +74,16 @@ export class DemoSharedNativescriptRevenuecat extends DemoSharedBase {
       });
   }
 
+  async syncPurchases() {
+    RevenueCat.syncPurchases()
+      .then(() => {
+        console.log('purchases synced');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   async getCustomerInfo() {
     RevenueCat.getCustomerInfo()
       .then((customerInfo) => {

@@ -196,4 +196,10 @@ export declare class RevenueCat extends RevenueCatCommon {
    * @returns {Promise<Boolean>} promise with boolean response
    */
   public static isConfigured(): Promise<boolean>;
+
+  /**
+   * Call this when you are switching from your own implementation of in-app purchases and need to sync customer data with RevenueCat.
+   * USE WITH CAUTION - https://www.revenuecat.com/docs/migrating-to-revenuecat/migrating-existing-subscriptions#client-side-sdk-data-import
+   */
+  public static syncPurchases(): Promise<Customer>;
 }
