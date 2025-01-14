@@ -1,18 +1,34 @@
-// Add your native dependencies here:
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven {
+    url 'https://maven.google.com/'
+    name 'Google'
+  }
+  maven { url "https://repo1.maven.org/maven2/" }
+  google()
+}
 
-// Uncomment to add recyclerview-v7 dependency
-//dependencies {
-//	compile 'com.android.support:recyclerview-v7:+'
-//}
+dependencies {
+  implementation 'androidx.dynamicanimation:dynamicanimation:1.1.0-alpha03'
+}
 
 android {
-  compileSdkVersion 32
+  compileSdkVersion 34
+  buildToolsVersion "34"
   defaultConfig {
-    minSdkVersion 21
-    targetSdkVersion 32
+    minSdkVersion 24
+    targetSdkVersion 34
     generatedDensities = []
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
+  }
+  // Ensure proper pick first order for any encountered
+  packagingOptions {
+    pickFirst "lib/x86/libc++_shared.so"
+    pickFirst "lib/x86_64/libc++_shared.so"
+    pickFirst "lib/armeabi-v7a/libc++_shared.so"
+    pickFirst "lib/arm64-v8a/libc++_shared.so"
   }
 }
