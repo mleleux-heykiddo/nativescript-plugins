@@ -1,7 +1,7 @@
 {
   "name": "@mleleux/nativescript-fb-analytics",
-  "version": "1.0.0",
-  "description": "Add a plugin description",
+  "version": "1.0.1",
+  "description": "Facebook Analytics plugin for NativeScript",
   "main": "index",
   "types": "index.d.ts",
   "nativescript": {
