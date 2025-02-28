@@ -22,7 +22,8 @@
     "paths": {
       "@demo/shared": ["tools/demo/index.ts"],
       "@mleleux/*": ["packages/*"],
-      "@mleleux/nativescript-revenuecat": ["packages/nativescript-revenuecat/index.d.ts"]
+      "@mleleux/nativescript-revenuecat": ["packages/nativescript-revenuecat/index.d.ts"],
+      "@mleleux/nativescript-fb-analytics": ["packages/nativescript-fb-analytics/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

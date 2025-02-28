@@ -3,5 +3,5 @@ ext {
   buildToolsVersion = "34"
   minSdkVersion = 24
   targetSdkVersion = 34
-  namespace = "com.heykiddo.talk"
+  namespace = "com.app.info"
 }

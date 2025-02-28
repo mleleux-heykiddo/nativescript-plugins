@@ -18,6 +18,12 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+  <key>FacebookAppID</key>
+	<string>461195828185079</string>
+  <key>FacebookClientToken</key>
+  <string>3b649f856bc69cfa6b1a089f0d427144</string>
+	<key>FacebookDisplayName</key>
+	<string>HeyKiddo</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
