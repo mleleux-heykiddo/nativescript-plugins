@@ -68,6 +68,13 @@ module.exports = {
           description: '@mleleux/nativescript-revenuecat: Build',
         },
       },
+      // @mleleux/nativescript-fb-analytics
+      'nativescript-fb-analytics': {
+        build: {
+          script: 'nx run nativescript-fb-analytics:build.all',
+          description: '@mleleux/nativescript-fb-analytics: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -81,6 +88,10 @@ module.exports = {
       'nativescript-revenuecat': {
         script: 'nx run nativescript-revenuecat:focus',
         description: 'Focus on @mleleux/nativescript-revenuecat',
+      },
+      'nativescript-fb-analytics': {
+        script: 'nx run nativescript-fb-analytics:focus',
+        description: 'Focus on @mleleux/nativescript-fb-analytics',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

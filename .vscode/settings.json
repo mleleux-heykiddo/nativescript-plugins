@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/apps/demo": false,
+    "**/apps/demo-angular": false,
+    "**/packages/nativescript-fb-analytics": false,
+    "**/packages/nativescript-revenuecat": false
+  },
+  "search.exclude": {
+    "**/apps/demo": false,
+    "**/apps/demo-angular": false,
+    "**/packages/nativescript-fb-analytics": false,
+    "**/packages/nativescript-revenuecat": false
+  }
+}

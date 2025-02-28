@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-fb-analytics",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-fb-analytics",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-fb-analytics",
+        "tsConfig": "packages/nativescript-fb-analytics/tsconfig.json",
+        "packageJson": "packages/nativescript-fb-analytics/package.json",
+        "main": "packages/nativescript-fb-analytics/index.d.ts",
+        "assets": [
+          "packages/nativescript-fb-analytics/*.md",
+          "packages/nativescript-fb-analytics/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-fb-analytics/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-fb-analytics"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-fb-analytics"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-fb-analytics"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-fb-analytics/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

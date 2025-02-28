@@ -2,6 +2,7 @@
   "main": "./src/main.ts",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
+    "@mleleux/nativescript-fb-analytics": "file:../../dist/packages/nativescript-fb-analytics",
     "@mleleux/nativescript-revenuecat": "file:../../dist/packages/nativescript-revenuecat"
   },
   "devDependencies": {

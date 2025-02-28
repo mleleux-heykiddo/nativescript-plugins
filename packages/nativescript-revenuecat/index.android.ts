@@ -222,39 +222,39 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async getAppUserID(): Promise<string> {
+  static getAppUserID(): string {
     return Purchases().getSharedInstance().getAppUserID();
   }
 
-  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
+  static setDebugLogsEnabled(enabled: boolean): void {
     Purchases().setDebugLogsEnabled(enabled);
   }
 
-  static async setLogLevel(logLevel: number): Promise<void> {
+  static setLogLevel(logLevel: number): void {
     Purchases().setLogLevel(logLevel);
   }
 
-  static async setAttributes(attributes: any): Promise<void> {
+  static setAttributes(attributes: any): void {
     Purchases().getSharedInstance().setAttributes(Utils.dataSerialize(attributes));
   }
 
-  static async setEmail(email: string): Promise<void> {
+  static setEmail(email: string): void {
     Purchases().getSharedInstance().setEmail(email);
   }
 
-  static async setPhoneNumber(phone: string): Promise<void> {
+  static setPhoneNumber(phone: string): void {
     Purchases().getSharedInstance().setPhoneNumber(phone);
   }
 
-  static async setDisplayName(displayName: string): Promise<void> {
+  static setDisplayName(displayName: string): void {
     Purchases().getSharedInstance().setDisplayName(displayName);
   }
 
-  static async setFirebaseAppInstanceID(firebaseAppInstanceID: string): Promise<void> {
+  static setFirebaseAppInstanceID(firebaseAppInstanceID: string): void {
     Purchases().getSharedInstance().setFirebaseAppInstanceID(firebaseAppInstanceID);
   }
 
-  static async setKeyword(keyword: string): Promise<void> {
+  static setKeyword(keyword: string): void {
     Purchases().getSharedInstance().setKeyword(keyword);
   }
 
@@ -271,7 +271,7 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async isConfigured(): Promise<boolean> {
+  static isConfigured(): boolean {
     return Purchases().isConfigured();
   }
 }

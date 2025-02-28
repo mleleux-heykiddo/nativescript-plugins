@@ -169,43 +169,43 @@ export class RevenueCat extends RevenueCatCommon {
     });
   }
 
-  static async setDebugLogsEnabled(enabled: boolean): Promise<void> {
+  static setDebugLogsEnabled(enabled: boolean): void {
     RCPurchases.setDebugLogsEnabled(enabled);
   }
 
-  static async setLogLevel(logLevel: number): Promise<void> {
+  static setLogLevel(logLevel: number): void {
     RCPurchases.setLogLevel(logLevel);
   }
 
-  static async setAttributes(attributes: any): Promise<void> {
+  static setAttributes(attributes: any): void {
     RCPurchases.sharedPurchases.setAttributes(attributes);
   }
 
-  static async setEmail(email: string): Promise<void> {
+  static setEmail(email: string): void {
     RCPurchases.sharedPurchases.setEmail(email);
   }
 
-  static async setPhoneNumber(phone: string): Promise<void> {
+  static setPhoneNumber(phone: string): void {
     RCPurchases.sharedPurchases.setPhoneNumber(phone);
   }
 
-  static async setDisplayName(displayName: string): Promise<void> {
+  static setDisplayName(displayName: string): void {
     RCPurchases.sharedPurchases.setDisplayName(displayName);
   }
 
-  static async setFirebaseAppInstanceID(firebaseAppInstanceID: string): Promise<void> {
+  static setFirebaseAppInstanceID(firebaseAppInstanceID: string): void {
     RCPurchases.sharedPurchases.setFirebaseAppInstanceID(firebaseAppInstanceID);
   }
 
-  static async setKeyword(keyword: string): Promise<void> {
+  static setKeyword(keyword: string): void {
     RCPurchases.sharedPurchases.setKeyword(keyword);
   }
 
-  static async canMakePayments(): Promise<boolean> {
+  static canMakePayments(): boolean {
     return RCPurchases.canMakePayments();
   }
 
-  static async isConfigured(): Promise<boolean> {
+  static isConfigured(): boolean {
     return RCPurchases.isConfigured;
   }
 }
