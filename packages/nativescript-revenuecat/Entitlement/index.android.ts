@@ -15,6 +15,8 @@ export class Entitlement extends BaseEntitlement {
     this.unsubscribeDate = nativeValue.getUnsubscribeDetectedAt() ? new Date(nativeValue.getUnsubscribeDetectedAt().toString()) : null;
     this.productId = nativeValue.getProductIdentifier();
     this.willRenew = nativeValue.getWillRenew();
+    this.periodType = nativeValue.getPeriodType().toString();
+    this.expirationDate = nativeValue.getExpirationDate() ? new Date(nativeValue.getExpirationDate().toString()) : null;
   }
 
   public get debug(): string {
