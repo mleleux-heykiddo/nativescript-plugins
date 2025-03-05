@@ -52,7 +52,8 @@ export declare class RevenueCat extends RevenueCatCommon {
   public static async getAllOfferings(): Promise<Offering[]>;
 
   /**
-   * Gets the entitlements for the current user.
+   * @deprecated Use `entitlements` on the `Customer` object/class instead.
+   * @description Gets the entitlements for the current user.
    * @returns {Promise<Entitlement>} Promise of entitlements structure. The promise will be rejected if configure
    * has not been called yet.
    */
