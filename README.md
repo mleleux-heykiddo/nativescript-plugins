@@ -1,4 +1,3 @@
-- [@mleleux/nativescript-fb-analytics](packages/nativescript-fb-analytics/README.md)
 - [@mleleux/nativescript-revenuecat](packages/nativescript-revenuecat/README.md)
 
 # How to use?
