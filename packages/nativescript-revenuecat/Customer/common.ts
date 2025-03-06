@@ -1,4 +1,5 @@
-import { Entitlement, EntitlementPeriodType } from '../Entitlement';
+import { Entitlement } from '../Entitlement';
+import { EntitlementPeriodType } from '../Entitlement/common';
 
 type CustomerInfo = com.revenuecat.purchases.CustomerInfo;
 

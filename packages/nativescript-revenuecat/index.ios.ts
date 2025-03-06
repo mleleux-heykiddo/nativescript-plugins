@@ -5,6 +5,8 @@ import { Offering } from './Offering/index.ios';
 import { Entitlement } from './Entitlement/index.ios';
 import { Customer } from './Customer/index.ios';
 
+export { EntitlementPeriodType } from './Entitlement/common';
+
 export class RevenueCat extends RevenueCatCommon {
   static configure(apiKey: string, appUserID?: string): void {
     RCPurchases.debugLogsEnabled = true;

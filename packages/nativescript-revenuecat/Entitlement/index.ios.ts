@@ -1,19 +1,4 @@
-import { BaseEntitlement } from './common';
-
-/**
- * @type {RCPeriodType}
- * @description * RevenueCat iOS SDK Entitlement period types.
- *
- * Native Enum value mapping:
- * - Normal: 0
- * - Intro: 1
- * - Trial: 2
- */
-export const EntitlementPeriodType = {
-  NORMAL: RCPeriodType.Normal,
-  INTRO: RCPeriodType.Intro,
-  TRIAL: RCPeriodType.Trial,
-};
+import { BaseEntitlement, EntitlementPeriodType } from './common';
 
 export class Entitlement extends BaseEntitlement {
   public nativeValue: RCEntitlementInfo;
@@ -29,7 +14,7 @@ export class Entitlement extends BaseEntitlement {
     this.unsubscribeDate = nativeValue.unsubscribeDetectedAt;
     this.productId = nativeValue.productIdentifier;
     this.willRenew = nativeValue.willRenew;
-    this.periodType = nativeValue.periodType;
+    this.periodType = this.mapPeriodType(nativeValue.periodType);
     this.expirationDate = nativeValue.expirationDate;
   }
 
@@ -45,6 +30,19 @@ export class Entitlement extends BaseEntitlement {
       return JSON.stringify(temp);
     } else {
       return null;
+    }
+  }
+
+  private mapPeriodType(periodType: RCPeriodType): EntitlementPeriodType {
+    switch (periodType) {
+      case RCPeriodType.Normal:
+        return EntitlementPeriodType.NORMAL;
+      case RCPeriodType.Intro:
+        return EntitlementPeriodType.INTRO;
+      case RCPeriodType.Trial:
+        return EntitlementPeriodType.TRIAL;
+      default:
+        return null;
     }
   }
 }

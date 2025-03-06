@@ -6,6 +6,8 @@ import { Offering } from './Offering/index.android';
 import { Entitlement } from './Entitlement/index.android';
 import { Customer } from './Customer/index.android';
 
+export { EntitlementPeriodType } from './Entitlement/common';
+
 const Purchases = lazy(() => com.revenuecat.purchases.Purchases);
 
 export class RevenueCat extends RevenueCatCommon {

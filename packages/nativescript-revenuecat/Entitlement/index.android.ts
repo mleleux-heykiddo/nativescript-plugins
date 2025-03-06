@@ -1,19 +1,6 @@
-import { BaseEntitlement } from './common';
+import { BaseEntitlement, EntitlementPeriodType } from './common';
 type EntitlementInfo = com.revenuecat.purchases.EntitlementInfo;
-
-/**
- * @type {com.revenuecat.purchases.PeriodType}
- * @description * RevenueCat Android SDK Entitlement period types.
- *
- * Native Enum value mapping:
- * - NORMAL: "NORMAL"
- * - INTRO: "INTRO"
- * - TRIAL: "TRIAL"
- */
-export const EntitlementPeriodType: com.revenuecat.purchases.PeriodType = Object.keys(com.revenuecat.purchases.PeriodType).reduce((acc, key) => {
-  acc[key] = key; // Ensure the PeriodType value is a string instead of the native object
-  return acc;
-}, {});
+const PeriodType = com.revenuecat.purchases.PeriodType;
 
 export class Entitlement extends BaseEntitlement {
   public nativeValue: EntitlementInfo;
@@ -29,11 +16,24 @@ export class Entitlement extends BaseEntitlement {
     this.unsubscribeDate = nativeValue.getUnsubscribeDetectedAt() ? new Date(nativeValue.getUnsubscribeDetectedAt().toString()) : null;
     this.productId = nativeValue.getProductIdentifier();
     this.willRenew = nativeValue.getWillRenew();
-    this.periodType = nativeValue.getPeriodType().toString();
+    this.periodType = this.mapPeriodType(nativeValue.getPeriodType()); // nativeValue.getPeriodType().toString();
     this.expirationDate = nativeValue.getExpirationDate() ? new Date(nativeValue.getExpirationDate().toString()) : null;
   }
 
   public get debug(): string {
     return this.nativeValue.toString();
+  }
+
+  private mapPeriodType(periodType: com.revenuecat.purchases.PeriodType): EntitlementPeriodType {
+    switch (periodType) {
+      case PeriodType.NORMAL:
+        return EntitlementPeriodType.NORMAL;
+      case PeriodType.INTRO:
+        return EntitlementPeriodType.INTRO;
+      case PeriodType.TRIAL:
+        return EntitlementPeriodType.TRIAL;
+      default:
+        return null;
+    }
   }
 }

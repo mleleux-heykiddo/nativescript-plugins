@@ -1,5 +1,14 @@
 type EntitlementInfo = com.revenuecat.purchases.EntitlementInfo;
 
+/**
+ * @description iOS or Android SDK specific Entitlement period types.
+ */
+export enum EntitlementPeriodType {
+  NORMAL = 'NORMAL',
+  INTRO = 'INTRO',
+  TRIAL = 'TRIAL',
+}
+
 export abstract class BaseEntitlement {
   public nativeValue: EntitlementInfo | RCEntitlementInfo;
   public abstract readonly debug: string | null;
@@ -40,10 +49,8 @@ export abstract class BaseEntitlement {
   public willRenew: boolean;
   /**
     The last period type this entitlement was in.
-    iOS (RCPeriodType): Normal (0), Intro (1), or Trial (2).
-    Android (com.revenuecat.purchases.PeriodType): "NORMAL", "INTRO" or "TRIAL".
   */
-  public periodType: RCPeriodType | com.revenuecat.purchases.PeriodType;
+  public periodType: EntitlementPeriodType;
   /**
     The expiration date for the entitlement, can be `nil` for lifetime access.
   */
