@@ -39,7 +39,7 @@ RevenueCat.configure('<api-key>', '<userId>');
 - `RevenueCat.getProducts(productIdentifiers: string[], type?: ProductCategory)`: Fetch the products for the given identifiers
 - `RevenueCat.getCurrentOffering()`: Fetch the current offering
 - `RevenueCat.getAllOfferings()`: Fetch all offerings
-- `RevenueCat.getEntitlementInfos()`: Fetch the entitlements for the user
+- `RevenueCat.getEntitlementInfos()`: (Deprecated) Fetch the entitlements for the user
 - `RevenueCat.purchaseProduct(product: Product)`: Purchase a product
 - `RevenueCat.restorePurchases()`: Restore purchases
 - `RevenueCat.getAppUserID()`: Get the current app user id
